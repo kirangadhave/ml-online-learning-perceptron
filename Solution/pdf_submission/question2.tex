@@ -9,8 +9,13 @@
 			Since $1 \leq l \leq 80$, the size of concept class $|C| = 80$	
 		
 		\item
-				
-	
+			The prediciton made by hypothesis of length $l$ on inputs $x_1^t$ and $x_2^t$ can be represented by the equation $$ sgn(2l - |x_1^t| - |x_2^t|) $$ 
+			We make a mistake when this prediction does not match $sgn(y^t)$ of the label $y^t$. Hence we can determine whether mistake has been made using the following inequality:					
+			\begin{equation}
+				\boxed{				
+					y^t(2l - |x_1^t| - |x_2^t|) < 0	
+				}	
+			\end{equation}
 	\end{enumerate}	    
     
     
