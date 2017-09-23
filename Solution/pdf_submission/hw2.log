@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2017.9.5)  23 SEP 2017 05:10
+This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2017.9.5)  23 SEP 2017 14:58
  restricted \write18 enabled.
 **hw2.tex
 (./hw2.tex
@@ -141,6 +141,16 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \ALC@tlm=\skip46
 \algorithmicindent=\skip47
 )
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
 
 LaTeX Warning: Unused global option(s):
     [fullpage].
@@ -148,18 +158,18 @@ LaTeX Warning: Unused global option(s):
 (./hw2.aux)
 \openout1 = hw2.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -195,7 +205,15 @@ LaTeX Font Info:    ... okay on input line 24.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(./question1.tex
+LaTeX Font Info:    Try loading font information for U+msa on input line 26.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 26.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (./question1.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
@@ -225,35 +243,37 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 36.
-) (./question3.tex
-[2] [3] [4] [5]) (./experiment-submission-guidelines.tex) [6] (./hw2.aux))
+ [2]) (./question3.tex
+[3] [4] [5]) (./experiment-submission-guidelines.tex [6]) [7] (./hw2.aux))
 
 Here is how much of LuaTeX's memory you used:
- 1898 strings out of 495004
+ 2215 strings out of 495004
  100000,89155 words of node,token memory allocated
- 390 words of node memory still in use:
+ 401 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 2 glue, 2 kern, 44 glue_spec, 1 write nodes
-   avail lists: 2:23,3:148,4:962,5:213,6:2358,7:29,9:186,10:196
- 5378 multiletter control sequences out of 65536+600000
- 55 fonts using 2171715 bytes
- 27i,12n,32p,440b,704s stack positions out of 5000i,500n,10000p,200000b,100000s
+   avail lists: 2:23,3:167,4:906,5:197,6:2390,7:24,9:193,10:216
+ 5653 multiletter control sequences out of 65536+600000
+ 69 fonts using 2721763 bytes
+ 27i,12n,32p,628b,704s stack positions out of 5000i,500n,10000p,200000b,100000s
 <</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><</usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><</usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><</usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><</usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr12.pfb><</usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr17.pfb><</usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr6.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr7.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr8.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
-fb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><</
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><</usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on hw2.pdf (6 pages, 166929 bytes).
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><</usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><</usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi8.pfb><</usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr12.pfb><</usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr17.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr6.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr7.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.p
+fb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><</
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><</usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><</usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><</usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on hw2.pdf (7 pages, 183497 bytes).
 
-PDF statistics: 79 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+PDF statistics: 90 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

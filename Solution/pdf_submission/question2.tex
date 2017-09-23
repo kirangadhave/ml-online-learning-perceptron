@@ -48,23 +48,24 @@
 	
 	On any given dataset, the algorithm will make maximum of $m$ mistakes where $$m = |40 - l_c|$$ where $l_c$ is value of length $l$ for correct function $f \in C$.
 	
-	
-	
-	
-	
-	
 	\end{enumerate}	    
     
-     	
-    
+     	 
     
     
 
-    \item~[20 points] Recall from class that the Halving algorithm assumes that there is the true (hidden) function is in the concept class $\mathcal{C}$ with $N$ elements and tries to find it. In this setting, we know the number of mistakes made by the algorithm is $O(\log N)$.
-        Another way to think about this setting is that we are trying to predict with expert advice. That is, we have a pool of $N$ so called experts, only one of whom is perfect. As the halving algorithm proceeds, it cuts down this pool by at least half each time a mistake is made.
-
-        Suppose, instead of one perfect expert, we have M perfect experts in our pool. Show that the mistake bound of the same Halving algorithm in this case is $O(\log\frac{N}{M})$.
-        (Hint: To show this, consider the stopping condition of the algorithm. At what point, will the algorithm stop making mistakes?)
+    \item
+		In the halving algorithm we predict output which agrees with majority of functions in the current concept class $C$. If a mistake is made, we remove the functions which predicted the wrong output and repeat the process on next example. This leads to cutting down of experts by atleast half      each time a mistake is made. This process stops when we reach down to $1$ expert because he has predicted correct output for all the examples. Now if we have $M$ experts in the initial concept class $C$ we will stop the algorithm when we have cut down the pool of experts  to these final $M$ functions.\\
+		Let $|C| = N$ be the initial size of concept class. When $0$ mistakes are made we have size of initial concept class $|C_0| = |C|$. When first mistake is made, $$|C_1| \leq \frac{1}{2}|C_0|$$ When 2 mistakes are made, $$|C_2| \leq \frac{1}{2^2}|C_0|$$. Let $n$ be the number of mistakes for which the size of concept class is cut down to $M$. Therefore, $$M = |C_n| \leq \frac{1}{2^n}|C_0|$$
+		Now in worst case we commit $M =  \frac{1}{2^n}|C_0|$ mistakes. But $|C_0| = |C| = N$. Therefore,
+		$$M = \frac{1}{2^n}N$$
+		\begin{align*}
+			\therefore 2^n = \frac{N}{M}
+		\end{align*}
+		\begin{align*}
+			\therefore n = \log_2 \bigg(\frac{N}{M}\bigg)    
+		\end{align*}
+		\therefore \ Mistake bound of halving algorithm in case of M experts is $O(\log \frac{N}{M})$
 \end{enumerate}
 
 %%% Local Variables:
