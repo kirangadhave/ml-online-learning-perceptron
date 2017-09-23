@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2017.9.5)  23 SEP 2017 05:09
+This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2017.9.5)  23 SEP 2017 05:10
  restricted \write18 enabled.
 **hw2.tex
 (./hw2.tex
@@ -250,7 +250,7 @@ cmr8.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
 fb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><</
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><</usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on hw2.pdf (6 pages, 166852 bytes).
+Output written on hw2.pdf (6 pages, 166929 bytes).
 
 PDF statistics: 79 PDF objects out of 1000 (max. 8388607)
  56 compressed objects within 1 object stream
