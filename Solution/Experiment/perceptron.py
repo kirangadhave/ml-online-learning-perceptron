@@ -24,7 +24,7 @@ class Perceptron:
             if (h*f < 0):
                 self.weights = self.weights + self.lr*f*i
                 self.bias = self.bias + self.lr*f
-        return data_mod
+        return self.weights, self.bias
 
     def init_weights_bias(self, cols):
         ran_init = random.uniform(-0.01, 0.01)
