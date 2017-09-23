@@ -1,0 +1,31 @@
+\section{Mistake Bound Model of Learning}\label{sec:q2}
+
+\begin{enumerate}
+    \item~
+    
+    
+	\begin{enumerate}
+		\item
+			Since $1 \leq l \leq 80$, the size of concept class $|C| = 80$	
+		
+		\item
+				
+	
+	\end{enumerate}	    
+    
+    
+    
+    
+    
+
+    \item~[20 points] Recall from class that the Halving algorithm assumes that there is the true (hidden) function is in the concept class $\mathcal{C}$ with $N$ elements and tries to find it. In this setting, we know the number of mistakes made by the algorithm is $O(\log N)$.
+        Another way to think about this setting is that we are trying to predict with expert advice. That is, we have a pool of $N$ so called experts, only one of whom is perfect. As the halving algorithm proceeds, it cuts down this pool by at least half each time a mistake is made.
+
+        Suppose, instead of one perfect expert, we have M perfect experts in our pool. Show that the mistake bound of the same Halving algorithm in this case is $O(\log\frac{N}{M})$.
+        (Hint: To show this, consider the stopping condition of the algorithm. At what point, will the algorithm stop making mistakes?)
+\end{enumerate}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "hw"
+%%% End:
