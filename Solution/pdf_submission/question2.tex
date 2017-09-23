@@ -28,8 +28,25 @@
 			When there is a mistake on positive example, we have label $y^t = -1$ and equation $2l - |x_1^t| - |x_2^t| \geq 0$. For negatiive example i.e $y^t = -1$ we must have either $x_1^t, x_2^t$ or both greater than value of $l_c$ for the correct function. $l_h$ is higher than all of these values, therefore we set $l_h = max(x_1^t, x_2^t) - 1$. This will ensure our hypothesis matches the label for current example.
 		\end{enumerate}
 			
-		\item Algorithm
+		\item 
+		Let the $l = l_h$ for current hypothesis. $\{ .. \}$ represents comments in the pseudocode.\\
+		\begin{algorithm}
+			\caption{Mistake driven algorithm to learn correct function $f \in C$}
+			\begin{algorithmic}
+				\STATE Start with $l_h = 40$ \COMMENT {We set $l_h$ to half of the range of $l$}
+				\FOR{each example}				
+					\IF{$y^t(2l - |x_1^t| - |x_2^t|) < 0$}  
+						\IF{$y^t == +1$} 
+							\STATE $l_h = max(x_1^t, x_2^t)$ \COMMENT {If mistake is made on positive example}
+						\ELSE
+							\STATE $l_h = max(x_1^t, x_2^t) - 1$ \COMMENT {If mistake is made on negative example}
+						\ENDIF				
+					\ENDIF 
+				\ENDFOR
+			\end{algorithmic}	
+		\end{algorithm}
 	
+	On any given dataset, the algorithm will make maximum of $m$ mistakes where $$m = |40 - l_c|$$ where $l_c$ is value of length $l$ for correct function $f \in C$.
 	
 	
 	
