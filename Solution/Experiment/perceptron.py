@@ -27,7 +27,7 @@ class Perceptron:
         for index, i in enumerate(self.X_train):
             h = np.inner(i, self.weights) + self.bias
             f = self.y_train[index]
-            if (h*f <= margin):
+            if (h*f <= self.margin):
                 self.weights = self.weights + lr*f*i
                 self.bias = self.bias + lr*f
                 self.updates += 1

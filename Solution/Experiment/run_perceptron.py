@@ -196,17 +196,20 @@ def margin_perceptron():
     global train1, train2, train3, train4, train5, test1, test2, test3, test4, test5
         
     learning_rates = [1,0.1,0.01]
+    margins = [1, 0.1, 0.01]
     
-    acc_dictionary = {}
+    combinations = [(x,y) for x in margins for y in learning_rates]
+    
+    acc_dictionary = []
     
     #Cross Validation
-    for lr in learning_rates:
+    for c in combinations:
         epoch = 10
-        p1 = Perceptron()
-        p2 = Perceptron()
-        p3 = Perceptron()
-        p4 = Perceptron()
-        p5 = Perceptron()
+        p1 = Perceptron(c[0])
+        p2 = Perceptron(c[0])
+        p3 = Perceptron(c[0])
+        p4 = Perceptron(c[0])
+        p5 = Perceptron(c[0])
         
         for x in range(epoch):
             np.random.shuffle(train1)
@@ -215,11 +218,11 @@ def margin_perceptron():
             np.random.shuffle(train4)
             np.random.shuffle(train5)
                      
-            p1.train(train1, lr, True)
-            p2.train(train2, lr, True)
-            p3.train(train3, lr, True)
-            p4.train(train4, lr, True)
-            p5.train(train5, lr, True)
+            p1.train(train1, c[1], True)
+            p2.train(train2, c[1], True)
+            p3.train(train3, c[1], True)
+            p4.train(train4, c[1], True)
+            p5.train(train5, c[1], True)
         
         p1.predict(test1)
         p2.predict(test2)
@@ -227,10 +230,10 @@ def margin_perceptron():
         p4.predict(test4)
         p5.predict(test5)
         
-        acc_dictionary[lr] = (p1.accuracy + p1.accuracy + p1.accuracy + p1.accuracy + p1.accuracy)/5
+        acc_dictionary.append((c,(p1.accuracy + p1.accuracy + p1.accuracy + p1.accuracy + p1.accuracy)/5))
     
-    best_hp = max(acc_dictionary, key=acc_dictionary.get)
-    
+    best_hp_set = max(acc_dictionary, key = lambda x:x[1])
+    best_hp = best_hp_set[0]
     #Final Run
     train = de.extract(["Dataset/phishing.train"])
     dev = de.extract(["Dataset/phishing.dev"])
@@ -239,11 +242,11 @@ def margin_perceptron():
     epoch = 20
     
     epoch_acc_dict = []
-    p = Perceptron()
+    p = Perceptron(best_hp[0])
         
     for i in range(epoch):
         np.random.shuffle(train)
-        p.train(train, best_hp, True)
+        p.train(train, best_hp[1], True)
         p.predict(dev)
         epoch_acc_dict.append((copy.deepcopy(p), p.accuracy))
     
@@ -253,8 +256,9 @@ def margin_perceptron():
     
 #   
 #    print(P.accuracy)
-    print("Best learning rate = " + str(best_hp))
-    print("Cross validation accuracy for best learning rate = " + str(acc_dictionary[best_hp]))
+    print("Best learning rate = " + str(best_hp[1]))
+    print("Best margin = " + str(best_hp[0]))
+    print("Cross validation accuracy for best learning rate = " + str(best_hp_set[1]))
     print("Total number of updates performed by the learning algorithm on training set = " + str(P.updates))
     print("Developement set accuracy = " + str(P_set[1]))
     print("Test set accuracy = " + str(P.accuracy))
@@ -276,9 +280,10 @@ def margin_perceptron():
     
 set_cross_validation()
 
-simple_perceptron()
-print()
-print()
-print()
-dynamic_perceptron()
-    
+#simple_perceptron()
+#print()
+#print()
+#print()
+#dynamic_perceptron()
+
+margin_perceptron()    
