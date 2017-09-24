@@ -46,13 +46,18 @@ class Perceptron:
         self.weights = np.array([ran_init]*cols)
         self.bias = ran_init
         
-    def predict(self, data):
+    def predict(self, data, average = False):
         self.X_test = data[:,:-1]
         self.y_test = data[:, -1]
-        
+        w = self.weights
+        b = self.bias
+        if average:
+            w = self.av_weights
+            b = self.av_bias
+            
         preds = []
         for x in self.X_test:
-            preds.append(np.inner(x, self.weights) + self.bias)
+            preds.append(np.inner(x, w) + b)
         self.predictions = preds
         self.accuracy = self.calc_accuracy()
         
