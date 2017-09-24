@@ -20,14 +20,16 @@ class Perceptron:
         self.X_train = data_mod[:,:-1]
         self.y_train = data_mod[:,-1]
 #        self.init_weights_bias(self.X_train.shape[1])
+        updates = 0
         
         for index, i in enumerate(self.X_train):
             h = np.inner(i, self.weights) + self.bias
             f = self.y_train[index]
             if (h*f < 0):
                 self.weights = self.weights + lr*f*i
-                self.bias = self.bias + lr*f  
-        return self.weights, self.bias
+                self.bias = self.bias + lr*f
+                updates += 1
+        return updates
 
     def init_weights_bias(self, cols):
         ran_init = random.uniform(-0.01, 0.01)

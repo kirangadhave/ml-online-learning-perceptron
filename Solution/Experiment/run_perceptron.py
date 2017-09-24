@@ -2,6 +2,7 @@ import numpy as np
 import data_extract as de
 from perceptron import Perceptron
 import copy
+import matplotlib.pyplot as plt
 
 train1, train2, train3, train4, train5, test1, test2, test3, test4, test5 = [],[],[],[],[],[],[],[],[],[]
 
@@ -69,12 +70,29 @@ def simple_perceptron():
     epoch_acc_dict = []
     p = Perceptron()
     
+    updates = 0
+    
     for i in range(epoch):
-        p.train(train, best_hp)
+        np.random.shuffle(train)
+        u = p.train(train, best_hp)
+        updates += u
         p.predict(dev)
         epoch_acc_dict.append((copy.deepcopy(p), p.accuracy))
-    print(epoch_acc_dict)
+    
     P = max(epoch_acc_dict, key = lambda x:x[1])
-    print(P)
+    P = P[0]
+    P.predict(test)
+    
+#    x_axis = list(range(1,21))
+#    y_axis = [x[1] for x in epoch_acc_dict]
+#    
+#    plt.plot(x_axis, y_axis)
+#    plt.ylim([1,100])
+#    plt.show()
+#    print(P.accuracy)
+    print("Best learning rate = " + str(best_hp))
+    print("Cross validation accuracy for best learning rate = " + str(epoch_acc_dict[best_hp]))
+    
+
     
 simple_perceptron()
