@@ -54,8 +54,8 @@ class Perceptron:
                 correct += 1
         return correct/len(self.y_test)*100
 
-train = de.extract('Dataset/CVSplits/training00.data')
-
+train = de.extract(['Dataset/CVSplits/training00.data', 'Dataset/CVSplits/training01.data', 'Dataset/CVSplits/training02.data', 'Dataset/CVSplits/training03.data'])
+test = de.extract(['Dataset/CVSplits/training04.data'])
 p = Perceptron(0.01)
 
 p.train(train,10)

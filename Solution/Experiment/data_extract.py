@@ -2,14 +2,15 @@ import numpy as np
 
 # Max number of features
 
-def extract(file_name):
+def extract(file_names):
     data = []
     labels = []
     
-    with open(file_name) as f:
-        for i in f.readlines():
-            data.append(i.strip())
-        
+    for file_name in file_names:
+        with open(file_name) as f:
+            for i in f.readlines():
+                data.append(i.strip())
+            
     for i,x in enumerate(data):
         if (x.split(' ')[0] == '+1'):
             labels.append(1)
