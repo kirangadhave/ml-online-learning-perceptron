@@ -3,7 +3,7 @@ import data_extract as de
 import random
 
 class Perceptron:
-    def __init__(self):
+    def __init__(self, margin = 0):
         self.weights = []
         self.bias = []
         self.X_train = []
@@ -13,23 +13,28 @@ class Perceptron:
         self.predictions = []
         self.accuracy = 0
         self.init_weights_bias(68)
+        self.updates = 0
+        self.t = 0
+        self.margin = margin
         
-    def train(self, data, lr):
+    def train(self, data, lr, dynamic_lr = False):
         data_mod = data
-        
+        lr_0 = lr
         self.X_train = data_mod[:,:-1]
         self.y_train = data_mod[:,-1]
 #        self.init_weights_bias(self.X_train.shape[1])
-        updates = 0
         
         for index, i in enumerate(self.X_train):
             h = np.inner(i, self.weights) + self.bias
             f = self.y_train[index]
-            if (h*f < 0):
+            if (h*f <= margin):
                 self.weights = self.weights + lr*f*i
                 self.bias = self.bias + lr*f
-                updates += 1
-        return updates
+                self.updates += 1
+                if dynamic_lr:
+                    lr = lr_0/(1+self.t)
+                    self.t += 1
+        return self.t
 
     def init_weights_bias(self, cols):
         ran_init = random.uniform(-0.01, 0.01)
