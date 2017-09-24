@@ -1,5 +1,7 @@
 import numpy as np
 
+# Max number of features
+
 def extract(file_name):
     data = []
     labels = []
@@ -17,12 +19,7 @@ def extract(file_name):
     
     data = np.array(data)
     
-    feat_count = []
-    
-    for x in data.flatten():
-        feat_count.append(x.split(':')[0])
-    
-    feat_count = int(feat_count[-1])
+    feat_count = 68
     
     final_data = []
     
