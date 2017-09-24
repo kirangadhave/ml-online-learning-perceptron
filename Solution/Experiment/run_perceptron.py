@@ -1,6 +1,7 @@
 import numpy as np
 import data_extract as de
 from perceptron import Perceptron
+import copy
 
 train1, train2, train3, train4, train5, test1, test2, test3, test4, test5 = [],[],[],[],[],[],[],[],[],[]
 
@@ -56,6 +57,24 @@ def simple_perceptron():
         
         acc_dictionary[lr] = (p1.accuracy + p1.accuracy + p1.accuracy + p1.accuracy + p1.accuracy)/5
     
-    print(acc_dictionary)
-
+    best_hp = max(acc_dictionary, key=acc_dictionary.get)
+    
+    #Final Run
+    train = de.extract(["Dataset/phishing.train"])
+    dev = de.extract(["Dataset/phishing.dev"])
+    test = de.extract(["Dataset/phishing.test"])
+    
+    epoch = 20
+    
+    epoch_acc_dict = []
+    p = Perceptron()
+    
+    for i in range(epoch):
+        p.train(train, best_hp)
+        p.predict(dev)
+        epoch_acc_dict.append((copy.deepcopy(p), p.accuracy))
+    print(epoch_acc_dict)
+    P = max(epoch_acc_dict, key = lambda x:x[1])
+    print(P)
+    
 simple_perceptron()
