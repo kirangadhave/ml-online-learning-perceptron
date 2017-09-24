@@ -3,33 +3,30 @@ import data_extract as de
 import random
 
 class Perceptron:
-    def __init__(self, lr):
+    def __init__(self):
         self.weights = []
         self.bias = []
-        self.lr = lr
         self.X_train = []
         self.y_train = []
         self.X_test = []
         self.y_test = []
         self.predictions = []
         self.accuracy = 0
+        self.init_weights_bias(68)
         
-    def train(self, data, epoch = 1):
+    def train(self, data, lr):
         data_mod = data
-        for i in range(epoch - 1):
-            np.random.shuffle(data)
-            data_mod = np.concatenate((data_mod, data), axis = 0) 
         
         self.X_train = data_mod[:,:-1]
         self.y_train = data_mod[:,-1]
-        self.init_weights_bias(self.X_train.shape[1])
+#        self.init_weights_bias(self.X_train.shape[1])
         
         for index, i in enumerate(self.X_train):
             h = np.inner(i, self.weights) + self.bias
             f = self.y_train[index]
             if (h*f < 0):
-                self.weights = self.weights + self.lr*f*i
-                self.bias = self.bias + self.lr*f  
+                self.weights = self.weights + lr*f*i
+                self.bias = self.bias + lr*f  
         return self.weights, self.bias
 
     def init_weights_bias(self, cols):
@@ -53,12 +50,10 @@ class Perceptron:
             if x*self.y_test[i] >= 0:
                 correct += 1
         return correct/len(self.y_test)*100
-
-train = de.extract(['Dataset/CVSplits/training00.data', 'Dataset/CVSplits/training01.data', 'Dataset/CVSplits/training02.data', 'Dataset/CVSplits/training03.data'])
-test = de.extract(['Dataset/CVSplits/training04.data'])
-p = Perceptron(0.01)
-
-p.train(train,10)
-p.predict(train)
-
-print(p.accuracy)
+#
+#train = de.extract(['Dataset/CVSplits/training00.data', 'Dataset/CVSplits/training01.data', 'Dataset/CVSplits/training02.data', 'Dataset/CVSplits/training03.data'])
+#test = de.extract(['Dataset/CVSplits/training04.data'])
+#p = Perceptron()
+#p.train(train, 0.01)
+#p.predict(train)
+#print(p.accuracy)
