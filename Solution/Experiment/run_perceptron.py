@@ -3,7 +3,7 @@ import data_extract as de
 from perceptron import Perceptron
 import copy
 import matplotlib.pyplot as plt
-
+import time
 
 plt.ioff()
 plt.close("all")
@@ -67,7 +67,7 @@ def simple_perceptron():
         p4.predict(test4)
         p5.predict(test5)
         
-        acc_dictionary[lr] = (p1.accuracy + p1.accuracy + p1.accuracy + p1.accuracy + p1.accuracy)/5
+        acc_dictionary[lr] = (p1.accuracy + p2.accuracy + p3.accuracy + p4.accuracy + p5.accuracy)/5
     
     best_hp = max(acc_dictionary, key=acc_dictionary.get)
     
@@ -147,7 +147,7 @@ def dynamic_perceptron():
         p4.predict(test4)
         p5.predict(test5)
         
-        acc_dictionary[lr] = (p1.accuracy + p1.accuracy + p1.accuracy + p1.accuracy + p1.accuracy)/5
+        acc_dictionary[lr] = (p1.accuracy + p2.accuracy + p3.accuracy + p4.accuracy + p5.accuracy)/5
     
     best_hp = max(acc_dictionary, key=acc_dictionary.get)
     
@@ -230,7 +230,7 @@ def margin_perceptron():
         p4.predict(test4)
         p5.predict(test5)
         
-        acc_dictionary.append((c,(p1.accuracy + p1.accuracy + p1.accuracy + p1.accuracy + p1.accuracy)/5))
+        acc_dictionary.append((c,(p1.accuracy + p2.accuracy + p3.accuracy + p4.accuracy + p5.accuracy)/5))
     
     best_hp_set = max(acc_dictionary, key = lambda x:x[1])
     best_hp = best_hp_set[0]
@@ -277,13 +277,20 @@ def margin_perceptron():
 #####################################################################################################################
 
     
-    
-set_cross_validation()
-
+#start = time.clock()
+#
+#set_cross_validation()
+#
 #simple_perceptron()
 #print()
 #print()
 #print()
 #dynamic_perceptron()
-
-margin_perceptron()    
+#print()
+#print()
+#print()
+#margin_perceptron()    
+#
+#timediff = time.clock() - start
+#
+#print(timediff)
