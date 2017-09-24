@@ -16,9 +16,12 @@ class Perceptron:
         self.updates = 0
         self.t = 0
         self.margin = margin
+        self.av_weights = self.weights
+        self.av_bias = self.bias
         
     def train(self, data, lr, dynamic_lr = False):
         data_mod = data
+        
         lr_0 = lr
         self.X_train = data_mod[:,:-1]
         self.y_train = data_mod[:,-1]
@@ -34,6 +37,8 @@ class Perceptron:
                 if dynamic_lr:
                     lr = lr_0/(1+self.t)
                     self.t += 1
+            self.av_weights = self.av_weights + self.weights
+            self.av_bias = self.av_bias + self.bias
         return self.t
 
     def init_weights_bias(self, cols):
