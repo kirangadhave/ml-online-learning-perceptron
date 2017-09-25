@@ -10,6 +10,9 @@ plt.ioff()
 plt.close("all")
 train1, train2, train3, train4, train5, test1, test2, test3, test4, test5 = [],[],[],[],[],[],[],[],[],[]
 
+plt.xlabel('Epochs')
+plt.ylabel('Accuracy (%)')
+plt.legend()
 
 
 #####################################################################################################################
@@ -100,16 +103,15 @@ def simple_perceptron():
     print("Best learning rate = " + str(best_hp))
     print("Cross validation accuracy for best learning rate = " + str(round(acc_dictionary[best_hp],4)))
     print("Total number of updates performed by the learning algorithm on training set = " + str(P.updates))
-    print("Developement set accuracy = " + str(round(P_set[1],4)))
+    print("Developement set accuracy = " + str(round(epoch_acc_dict[-1][1],4)))
     print("Test set accuracy = " + str(round(P.accuracy,4)))
     
     x_axis = list(range(1,21))
     y_axis = [x[1] for x in epoch_acc_dict]
-    plt.plot(x_axis, y_axis)
+    plt.plot(x_axis, y_axis, label = "Simple Perceptron")
     plt.ylim([1,100])
     
-#     Uncomment the below line to see the plot
-#    plt.show()
+    plt.show()
     
 #####################################################################################################################
 #####################################################################################################################
@@ -185,11 +187,10 @@ def dynamic_perceptron():
     
     x_axis = list(range(1,21))
     y_axis = [x[1] for x in epoch_acc_dict]
-    plt.plot(x_axis, y_axis)
+    plt.plot(x_axis, y_axis, label = "Perceptron with dynamic learning")
     plt.ylim([1,100])
     
-#     Uncomment the below line to see the plot
-#    plt.show()
+    plt.show()
 
 #####################################################################################################################
 #####################################################################################################################
@@ -264,16 +265,15 @@ def margin_perceptron():
     print("Best margin = " + str(best_hp[0]))
     print("Cross validation accuracy for best learning rate = " + str(round(best_hp_set[1], 4)))
     print("Total number of updates performed by the learning algorithm on training set = " + str(P.updates))
-    print("Developement set accuracy = " + str(round(P_set[1], 4)))
+    print("Developement set accuracy = " + str(round(epoch_acc_dict[-1][1], 4)))
     print("Test set accuracy = " + str(round(P.accuracy,4)))
     
     x_axis = list(range(1,21))
     y_axis = [x[1] for x in epoch_acc_dict]
-    plt.plot(x_axis, y_axis)
+    plt.plot(x_axis, y_axis, label = "Margin Perceptron")
     plt.ylim([1,100])
     
-#     Uncomment the below line to see the plot
-#    plt.show()
+    plt.show()
 
 #####################################################################################################################
 #####################################################################################################################
@@ -343,17 +343,16 @@ def average_perceptron():
     print("Best learning rate = " + str(best_hp))
     print("Cross validation accuracy for best learning rate = " + str(round(acc_dictionary[best_hp],4)))
     print("Total number of updates performed by the learning algorithm on training set = " + str(P.updates))
-    print("Developement set accuracy = " + str(round(P_set[1], 4)))
+    print("Developement set accuracy = " + str(round(epoch_acc_dict[-1][1], 4)))
     print("Test set accuracy = " + str(round(P.accuracy,4)))
     
     x_axis = list(range(1,21))
     y_axis = [x[1] for x in epoch_acc_dict]
-    plt.plot(x_axis, y_axis)
+    plt.plot(x_axis, y_axis, label = "Averaged Perceptron")
     plt.ylim([1,100])
     
-#     Uncomment the below line to see the plot
-#    plt.show()
-
+    plt.show()
+        
 #####################################################################################################################
 #####################################################################################################################
 #####################################################################################################################
@@ -421,16 +420,16 @@ def aggresive_perceptron():
     print("Best margin = " + str(best_hp))
     print("Cross validation accuracy for best learning rate = " + str(round(acc_dictionary[best_hp],4)))
     print("Total number of updates performed by the learning algorithm on training set = " + str(P.updates))
-    print("Developement set accuracy = " + str(round(P_set[1],4)))
+    print("Developement set accuracy = " + str(round(epoch_acc_dict[-1][1],4)))
     print("Test set accuracy = " + str(round(P.accuracy,4)))
     
     x_axis = list(range(1,21))
     y_axis = [x[1] for x in epoch_acc_dict]
-    plt.plot(x_axis, y_axis)
+    plt.plot(x_axis, y_axis, label = "Aggressive Perceptron")
     plt.ylim([1,100])
     
-#     Uncomment the below line to see the plot
-#    plt.show()
+#    if plot_show:
+    plt.show()
     
 #####################################################################################################################
 #####################################################################################################################
@@ -469,5 +468,6 @@ print("Aggressive Perceptron with Margin")
 aggresive_perceptron()
 print()
 timediff = time.clock() - start
+#plt.show()
 
 #print(timediff)

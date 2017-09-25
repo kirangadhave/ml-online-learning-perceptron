@@ -1,40 +1,41 @@
 #####################################################################################
 Simple Perceptron
 Best learning rate = 0.1
-Cross validation accuracy for best learning rate = 91.4603
-Total number of updates performed by the learning algorithm on training set = 10638
-Developement set accuracy = 92.4023
-Test set accuracy = 92.9812
+Cross validation accuracy for best learning rate = 90.7971
+Total number of updates performed by the learning algorithm on training set = 3026
+Developement set accuracy = 92.4747
+Test set accuracy = 92.9088
 
 #####################################################################################
 Perceptron with dynamic learning rate
-Best learning rate = 0.1
-Cross validation accuracy for best learning rate = 59.329
-Total number of updates performed by the learning algorithm on training set = 862
-Developement set accuracy = 90.9551
-Test set accuracy = 90.6657
+Best learning rate = 0.01
+Cross validation accuracy for best learning rate = 63.1175
+Total number of updates performed by the learning algorithm on training set = 900
+Developement set accuracy = 89.2185
+Test set accuracy = 89.1462
 
 #####################################################################################
 Margin Perceptron
-Best learning rate = 1
+Best learning rate = 0.1
 Best margin = 0.1
-Cross validation accuracy for best learning rate = 69.0872
-Total number of updates performed by the learning algorithm on training set = 2628
-Developement set accuracy = 90.3763
-Test set accuracy = 91.2446
+Cross validation accuracy for best learning rate = 71.7435
+Total number of updates performed by the learning algorithm on training set = 78550
+Developement set accuracy = 88.8567
+Test set accuracy = 90.3039
 
 #####################################################################################
 Averaged Perceptron
 Best learning rate = 0.01
-Cross validation accuracy for best learning rate = 93.6076
-Total number of updates performed by the learning algorithm on training set = 1538
-Developement set accuracy = 92.547
-Test set accuracy = 93.1259
+Cross validation accuracy for best learning rate = 93.5835
+Total number of updates performed by the learning algorithm on training set = 10639
+Developement set accuracy = 92.4023
+Test set accuracy = 92.9812
 
 #####################################################################################
 Aggressive Perceptron with Margin
 Best margin = 0.1
-Cross validation accuracy for best learning rate = 91.6655
-Total number of updates performed by the learning algorithm on training set = 6290
-Developement set accuracy = 92.8365
-Test set accuracy = 93.4153
+Cross validation accuracy for best learning rate = 88.2397
+Total number of updates performed by the learning algorithm on training set = 50161
+Developement set accuracy = 92.4747
+Test set accuracy = 93.1983
+

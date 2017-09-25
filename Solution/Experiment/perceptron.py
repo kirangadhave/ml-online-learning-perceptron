@@ -38,13 +38,13 @@ class Perceptron:
             for index, i in enumerate(self.X_train):
                 h = np.inner(i, self.weights) + self.bias
                 f = self.y_train[index]
+                if dynamic_lr:
+                        lr = lr_0/(1+self.t)
+                        self.t += 1
                 if (h*f <= self.margin):
                     self.weights = self.weights + lr*f*i
                     self.bias = self.bias + lr*f
-                    self.updates += 1
-                    if dynamic_lr:
-                        lr = lr_0/(1+self.t)
-                        self.t += 1
+                    self.updates += 1    
                 self.av_weights = self.av_weights + self.weights
                 self.av_bias = self.av_bias + self.bias
             
