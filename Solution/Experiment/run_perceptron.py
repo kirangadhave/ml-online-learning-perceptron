@@ -378,19 +378,18 @@ def aggresive_perceptron():
             np.random.shuffle(train5)
             
             p1.train(train1, lr, aggressive = True)
-            p2.train(train2, lr, True)
-            p3.train(train3, lr, True)
-            p4.train(train4, lr, True)
-            p5.train(train5, lr, True)
+            p2.train(train2, lr, aggressive = True)
+            p3.train(train3, lr, aggressive = True)
+            p4.train(train4, lr, aggressive = True)
+            p5.train(train5, lr, aggressive = True)
         
-        p1.predict(test1)
-        p2.predict(test2)
-        p3.predict(test3)
-        p4.predict(test4)
-        p5.predict(test5)
+        p1.predict(test1, aggressive = True)
+        p2.predict(test2, aggressive = True)
+        p3.predict(test3, aggressive = True)
+        p4.predict(test4, aggressive = True)
+        p5.predict(test5, aggressive = True)
         
         acc_dictionary[lr] = (p1.accuracy + p2.accuracy + p3.accuracy + p4.accuracy + p5.accuracy)/5
-    
     best_hp = max(acc_dictionary, key=acc_dictionary.get)
     
     #Final Run
@@ -405,17 +404,17 @@ def aggresive_perceptron():
         
     for i in range(epoch):
         np.random.shuffle(train)
-        p.train(train, best_hp, True)
-        p.predict(dev)
+        p.train(train, best_hp, aggressive = True)
+        p.predict(dev, aggressive = True)
         epoch_acc_dict.append((copy.deepcopy(p), p.accuracy))
     
     P_set = max(epoch_acc_dict, key = lambda x:x[1])
     P = P_set[0]
-    P.predict(test)
+    P.predict(test, aggressive = True)
     
 #   
 #    print(P.accuracy)
-    print("Best learning rate = " + str(best_hp))
+    print("Best margin = " + str(best_hp))
     print("Cross validation accuracy for best learning rate = " + str(acc_dictionary[best_hp]))
     print("Total number of updates performed by the learning algorithm on training set = " + str(P.updates))
     print("Developement set accuracy = " + str(P_set[1]))
@@ -438,22 +437,26 @@ start = time.clock()
 
 set_cross_validation()
 
-#simple_perceptron()
-#print()
-#print()
-#print()
-#dynamic_perceptron()
-#print()
-#print()
-#print()
-#margin_perceptron()    
-#print()
-#print()
-#print()    
-#average_perceptron()
-
+print("#####################################################################################")
+print("Simple Perceptron")
+simple_perceptron()
+print()
+print("#####################################################################################")
+print("Perceptron with dynamic learning rate")
+dynamic_perceptron()
+print()
+print("#####################################################################################")
+print("Margin Perceptron")
+margin_perceptron()    
+print()
+print("#####################################################################################")
+print("Averaged Perceptron")
+average_perceptron()
+print()
+print("#####################################################################################")
+print("Aggressive Perceptron with Margin")
 aggresive_perceptron()
-
+print()
 timediff = time.clock() - start
 
-print(timediff)
+#print(timediff)
