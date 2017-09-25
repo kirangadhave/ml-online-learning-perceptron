@@ -19,10 +19,33 @@ class Perceptron:
         self.av_weights = self.weights
         self.av_bias = self.bias
         
-    def train(self, data, lr, dynamic_lr = False):
-        data_mod = data
-        
-        lr_0 = lr
+    def train(self, data, lr, dynamic_lr = False, aggressive = False):
+        if aggressive:
+            self.train_aggressive(data, lr)
+        else:
+            data_mod = data
+            lr_0 = lr
+            self.X_train = data_mod[:,:-1]
+            self.y_train = data_mod[:,-1]
+    #        self.init_weights_bias(self.X_train.shape[1])
+            
+            for index, i in enumerate(self.X_train):
+                h = np.inner(i, self.weights) + self.bias
+                f = self.y_train[index]
+                if (h*f <= self.margin):
+                    self.weights = self.weights + lr*f*i
+                    self.bias = self.bias + lr*f
+                    self.updates += 1
+                    if dynamic_lr:
+                        lr = lr_0/(1+self.t)
+                        self.t += 1
+                self.av_weights = self.av_weights + self.weights
+                self.av_bias = self.av_bias + self.bias
+            
+    def train_aggressive(self, data, margin):
+        data_mod = np.c_(np.ones((data.shape[0],1)), data)
+        print(data_mod)
+        return
         self.X_train = data_mod[:,:-1]
         self.y_train = data_mod[:,-1]
 #        self.init_weights_bias(self.X_train.shape[1])
@@ -30,17 +53,13 @@ class Perceptron:
         for index, i in enumerate(self.X_train):
             h = np.inner(i, self.weights) + self.bias
             f = self.y_train[index]
-            if (h*f <= self.margin):
+            if (h*f <= margin):
                 self.weights = self.weights + lr*f*i
                 self.bias = self.bias + lr*f
                 self.updates += 1
-                if dynamic_lr:
-                    lr = lr_0/(1+self.t)
-                    self.t += 1
             self.av_weights = self.av_weights + self.weights
             self.av_bias = self.av_bias + self.bias
-        return self.t
-
+        
     def init_weights_bias(self, cols):
         ran_init = random.uniform(-0.01, 0.01)
         self.weights = np.array([ran_init]*cols)
