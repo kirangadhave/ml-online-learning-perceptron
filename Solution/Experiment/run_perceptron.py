@@ -12,7 +12,7 @@ train1, train2, train3, train4, train5, test1, test2, test3, test4, test5 = [],[
 
 plt.xlabel('Epochs')
 plt.ylabel('Accuracy (%)')
-plt.legend()
+plt.legend(loc='upper left')
 
 
 #####################################################################################################################
