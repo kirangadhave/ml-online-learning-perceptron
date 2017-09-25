@@ -1,6 +1,12 @@
 import numpy as np
 import data_extract as de
+from random_seed import random_seed
 import random
+
+#To change seed value, change the value of random_seed variable in file 'random_seed.py'
+# Uncomment the below line to seed the random functions. 
+
+random.seed(random_seed)
 
 class Perceptron:
     def __init__(self, margin = 0):
