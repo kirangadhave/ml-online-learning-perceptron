@@ -436,6 +436,8 @@ def aggresive_perceptron():
 #####################################################################################################################
 #####################################################################################################################
     
+
+'''
 start = time.clock()
 
 set_cross_validation()
@@ -468,6 +470,10 @@ print("Aggressive Perceptron with Margin")
 aggresive_perceptron()
 print()
 timediff = time.clock() - start
-#plt.show()
+ 
+'''
 
-#print(timediff)
+from collections import Counter
+train = Counter(list(de.extract(["Dataset/phishing.train"])[:,-1]))
+dev = Counter(list(de.extract(["Dataset/phishing.dev"])[:,-1]))
+test = Counter(list(de.extract(["Dataset/phishing.test"])[:,-1]))
