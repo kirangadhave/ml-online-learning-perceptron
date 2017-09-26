@@ -108,7 +108,7 @@ def simple_perceptron():
     
     x_axis = list(range(1,21))
     y_axis = [x[1] for x in epoch_acc_dict]
-    plt.plot(x_axis, y_axis, label = "Simple Perceptron")
+#    plt.plot(x_axis, y_axis, label = "Simple Perceptron")
     plt.ylim([1,100])
     
 #    plt.show()
@@ -187,7 +187,7 @@ def dynamic_perceptron():
     
     x_axis = list(range(1,21))
     y_axis = [x[1] for x in epoch_acc_dict]
-    plt.plot(x_axis, y_axis, label = "Perceptron with dynamic learning")
+#    plt.plot(x_axis, y_axis, label = "Perceptron with dynamic learning")
     plt.ylim([1,100])
     
 #    plt.show()
@@ -270,10 +270,10 @@ def margin_perceptron():
     
     x_axis = list(range(1,21))
     y_axis = [x[1] for x in epoch_acc_dict]
-    plt.plot(x_axis, y_axis, label = "Margin Perceptron")
+#    plt.plot(x_axis, y_axis, label = "Margin Perceptron")
     plt.ylim([1,100])
     
-#*    plt.show()
+#    plt.show()
 
 #####################################################################################################################
 #####################################################################################################################
@@ -348,7 +348,7 @@ def average_perceptron():
     
     x_axis = list(range(1,21))
     y_axis = [x[1] for x in epoch_acc_dict]
-    plt.plot(x_axis, y_axis, label = "Averaged Perceptron")
+#    plt.plot(x_axis, y_axis, label = "Averaged Perceptron")
     plt.ylim([1,100])
     
 #    plt.show()
@@ -425,7 +425,7 @@ def aggresive_perceptron():
     
     x_axis = list(range(1,21))
     y_axis = [x[1] for x in epoch_acc_dict]
-    plt.plot(x_axis, y_axis, label = "Aggressive Perceptron")
+#    plt.plot(x_axis, y_axis, label = "Aggressive Perceptron")
     plt.ylim([1,100])
     
 
@@ -438,15 +438,19 @@ def aggresive_perceptron():
     
 
 
-start = time.clock()
+#start = time.clock()
 
-set_cross_validation()
 #To change seed value, change the value of random_seed variable in file 'random_seed.py'
 # Uncomment the below line to seed the random functions. 
 
 np.random.seed(random_seed)
 
 
+
+
+
+
+set_cross_validation()
 print("#####################################################################################")
 print("Simple Perceptron")
 simple_perceptron()
@@ -467,7 +471,8 @@ print("#########################################################################
 print("Aggressive Perceptron with Margin")
 aggresive_perceptron()
 print()
-timediff = time.clock() - start
+
+#timediff = time.clock() - start
  
 '''
 
