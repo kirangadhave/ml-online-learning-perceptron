@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2017.9.5)  26 SEP 2017 16:06
+This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2017.9.5)  26 SEP 2017 16:55
  restricted \write18 enabled.
 **hw2.tex
 (./hw2.tex
@@ -243,18 +243,32 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 36.
- [2]) (./question3.tex)
-[3] (./hw2.aux))
+ [2]) (./question3.tex
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+
+ []
+
+[3] [4]) [5] (./hw2.aux))
 
 Here is how much of LuaTeX's memory you used:
- 2177 strings out of 495004
+ 2178 strings out of 495004
  100000,89155 words of node,token memory allocated
  372 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 2 glue, 2 kern, 44 glue_spec, 1 write nodes
-   avail lists: 2:20,3:138,4:935,5:189,6:2007,7:21,9:193,10:153
- 5634 multiletter control sequences out of 65536+600000
+   avail lists: 2:20,3:138,4:935,5:196,6:2091,7:66,9:193,10:155
+ 5635 multiletter control sequences out of 65536+600000
  56 fonts using 2211671 bytes
- 27i,12n,32p,628b,704s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 27i,12n,32p,702b,704s stack positions out of 5000i,500n,10000p,200000b,100000s
 <</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><</usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><</usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><</usr/share/texli
@@ -265,10 +279,10 @@ ype1/public/amsfonts/cm/cmr17.pfb><</usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmr8.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmsy10.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 symbols/msam10.pfb>
-Output written on hw2.pdf (3 pages, 111501 bytes).
+Output written on hw2.pdf (5 pages, 117079 bytes).
 
-PDF statistics: 54 PDF objects out of 1000 (max. 8388607)
- 38 compressed objects within 1 object stream
+PDF statistics: 60 PDF objects out of 1000 (max. 8388607)
+ 42 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

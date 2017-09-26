@@ -102,7 +102,7 @@ def simple_perceptron():
 #    print(P.accuracy)
     print("Best learning rate = " + str(best_hp))
     print("Cross validation accuracy for best learning rate = " + str(round(acc_dictionary[best_hp],4)))
-    print("Total number of updates performed by the learning algorithm on training set = " + str(P.updates))
+    print("Total number of updates performed by the learning algorithm on training set = " + str(epoch_acc_dict[-1][0].updates))
     print("Developement set accuracy = " + str(round(epoch_acc_dict[-1][1],4)))
     print("Test set accuracy = " + str(round(P.accuracy,4)))
     
@@ -111,7 +111,7 @@ def simple_perceptron():
     plt.plot(x_axis, y_axis, label = "Simple Perceptron")
     plt.ylim([1,100])
     
-    plt.show()
+#    plt.show()
     
 #####################################################################################################################
 #####################################################################################################################
@@ -181,8 +181,8 @@ def dynamic_perceptron():
 #    print(P.accuracy)
     print("Best learning rate = " + str(best_hp))
     print("Cross validation accuracy for best learning rate = " + str(round(acc_dictionary[best_hp],4)))
-    print("Total number of updates performed by the learning algorithm on training set = " + str(P.updates))
-    print("Developement set accuracy = " + str(round(P_set[1],4)))
+    print("Total number of updates performed by the learning algorithm on training set = " + str(epoch_acc_dict[-1][0].updates))
+    print("Developement set accuracy = " + str(round(epoch_acc_dict[-1][1],4)))
     print("Test set accuracy = " + str(round(P.accuracy,4)))
     
     x_axis = list(range(1,21))
@@ -190,7 +190,7 @@ def dynamic_perceptron():
     plt.plot(x_axis, y_axis, label = "Perceptron with dynamic learning")
     plt.ylim([1,100])
     
-    plt.show()
+#    plt.show()
 
 #####################################################################################################################
 #####################################################################################################################
@@ -264,7 +264,7 @@ def margin_perceptron():
     print("Best learning rate = " + str(best_hp[1]))
     print("Best margin = " + str(best_hp[0]))
     print("Cross validation accuracy for best learning rate = " + str(round(best_hp_set[1], 4)))
-    print("Total number of updates performed by the learning algorithm on training set = " + str(P.updates))
+    print("Total number of updates performed by the learning algorithm on training set = " + str(epoch_acc_dict[-1][0].updates))
     print("Developement set accuracy = " + str(round(epoch_acc_dict[-1][1], 4)))
     print("Test set accuracy = " + str(round(P.accuracy,4)))
     
@@ -273,7 +273,7 @@ def margin_perceptron():
     plt.plot(x_axis, y_axis, label = "Margin Perceptron")
     plt.ylim([1,100])
     
-    plt.show()
+#*    plt.show()
 
 #####################################################################################################################
 #####################################################################################################################
@@ -342,7 +342,7 @@ def average_perceptron():
 #    print(P.accuracy)
     print("Best learning rate = " + str(best_hp))
     print("Cross validation accuracy for best learning rate = " + str(round(acc_dictionary[best_hp],4)))
-    print("Total number of updates performed by the learning algorithm on training set = " + str(P.updates))
+    print("Total number of updates performed by the learning algorithm on training set = " + str(epoch_acc_dict[-1][0].updates))
     print("Developement set accuracy = " + str(round(epoch_acc_dict[-1][1], 4)))
     print("Test set accuracy = " + str(round(P.accuracy,4)))
     
@@ -351,7 +351,7 @@ def average_perceptron():
     plt.plot(x_axis, y_axis, label = "Averaged Perceptron")
     plt.ylim([1,100])
     
-    plt.show()
+#    plt.show()
         
 #####################################################################################################################
 #####################################################################################################################
@@ -419,7 +419,7 @@ def aggresive_perceptron():
 #    print(P.accuracy)
     print("Best margin = " + str(best_hp))
     print("Cross validation accuracy for best learning rate = " + str(round(acc_dictionary[best_hp],4)))
-    print("Total number of updates performed by the learning algorithm on training set = " + str(P.updates))
+    print("Total number of updates performed by the learning algorithm on training set = " + str(epoch_acc_dict[-1][0].updates))
     print("Developement set accuracy = " + str(round(epoch_acc_dict[-1][1],4)))
     print("Test set accuracy = " + str(round(P.accuracy,4)))
     
@@ -428,8 +428,8 @@ def aggresive_perceptron():
     plt.plot(x_axis, y_axis, label = "Aggressive Perceptron")
     plt.ylim([1,100])
     
-#    if plot_show:
-    plt.show()
+
+#    plt.show()
     
 #####################################################################################################################
 #####################################################################################################################
@@ -437,12 +437,10 @@ def aggresive_perceptron():
 #####################################################################################################################
     
 
-'''
+
 start = time.clock()
 
 set_cross_validation()
-
-
 #To change seed value, change the value of random_seed variable in file 'random_seed.py'
 # Uncomment the below line to seed the random functions. 
 
@@ -477,3 +475,4 @@ from collections import Counter
 train = Counter(list(de.extract(["Dataset/phishing.train"])[:,-1]))
 dev = Counter(list(de.extract(["Dataset/phishing.dev"])[:,-1]))
 test = Counter(list(de.extract(["Dataset/phishing.test"])[:,-1]))
+'''
