@@ -27,7 +27,7 @@
 			\item Negative Example: \\
 			When there is a mistake on positive example, we have label $y^t = -1$ and equation $2l - |x_1^t| - |x_2^t| \geq 0$. For negatiive example i.e $y^t = -1$ we must have either $x_1^t, x_2^t$ or both greater than value of $l_c$ for the correct function. $l_h$ is higher than all of these values, therefore we set $l_h = max(x_1^t, x_2^t) - 1$. This will ensure our hypothesis matches the label for current example.
 		\end{enumerate}
-			
+			This is how we update $l$ on making a mistake.
 		\item 
 		Let the $l = l_h$ for current hypothesis. $\{ .. \}$ represents comments in the pseudocode.\\
 		\begin{algorithm}
