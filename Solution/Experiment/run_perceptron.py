@@ -443,7 +443,7 @@ def aggresive_perceptron():
 #To change seed value, change the value of random_seed variable in file 'random_seed.py'
 # Uncomment the below line to seed the random functions. 
 
-np.random.seed(random_seed)
+#np.random.seed(random_seed)
 
 
 

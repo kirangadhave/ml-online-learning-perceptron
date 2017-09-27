@@ -6,14 +6,19 @@
 		\begin{enumerate}
 	
 			\item Python3.6 is used to implement the experiment.\\
-			\item Each datafile is read and parsed into a numpy array with 68 columns. Each column has appropraite values of the features as in the file. Rest are set to 0.\\
-			\item I have defined perceptron as a single class with training data, test data, predictions, weights, bias and accuracy as its attributes and train and predict as its methods. The file $perceptron.py$ represents the class. Aggressive variants of train and predict methods are also present in the class and called when aggressive flag is set while calling train and predict. Weights are represented by a list object with length equal to that of number of columns. Bias is represented as float. When object of perceptron class is created, the weights and bias are initialised randomly between $-0.01$ and $0.01$. There is option of seeding this random number if required.\\
+			\item Each datafile is read and parsed into a numpy array with 68 columns. Each column has appropriate values of the features as in the file. Rest are set to 0.\\
+			\item I have defined perceptron as a single class with training data, test data, predictions, weights, bias and accuracy as its attributes and train and predict as its methods. The file $perceptron.py$ represents the class. Aggressive variants of train and predict methods are also present in the class and called when aggressive flag is set while calling train and predict. Weights are represented by a list of floats with length equal to that of number of columns. Bias is represented as float. When object of perceptron class is created, the weights and bias are initialised randomly between $-0.01$ and $0.01$. There is option of seeding this random number if required.\\
 			
 			\item Simple perceptron is represented by the class as is. No extra parameters except for data and learning rate are required while calling the train function.\\
 				If dynamic\_ lr flag for train function is set, then perceptron will learn with a dynamic learning rate. The learning rate is updated for each example, whether there is a mistake or not.\\
 				While creating object of perceptron object we can pass it margin value which is used to check if update is to be done for the example or not. Default value of this attribute is $0$.\\
 				There are extra attributes to store average weights and average bias. These are always updated in each iteration, but the predict function ignores them unless average flag is set, in this case average weights and average bias are used for prediction.\\ 
 				Aggressive perceptron can be trained by passing the aggressive flag as 1 in train and predict function. Here weights and bias are not stored seperately but collection of weights has $n+1$ weights where $n$ is number of features in data. An column of $1$s is appended to $x$ before training and predictions.
+				
+			\item
+			I have used a two random functions. One for generation of random weights and bias, and the other for shuffling numpy arrays. Both can be seeded to have output as described in trace file.
+			Seed value can be set by setting the variable in $random\_seed.py$ file. Just uncomment the lines which are used to set the random seed, in order to seed those functions
+			
 		\end{enumerate}	
 	
 	\item

@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2017.9.5)  26 SEP 2017 17:34
+This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2017.9.5)  26 SEP 2017 21:35
  restricted \write18 enabled.
 **hw2.tex
 (./hw2.tex
@@ -383,7 +383,7 @@ Here is how much of LuaTeX's memory you used:
  100000,128383 words of node,token memory allocated
  372 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 2 glue, 2 kern, 44 glue_spec, 1 write nodes
-   avail lists: 2:20,3:138,4:935,5:196,6:2091,7:66,9:193,10:155
+   avail lists: 2:20,3:138,4:935,5:196,6:2092,7:66,9:193,10:156
  6840 multiletter control sequences out of 65536+600000
  56 fonts using 2211671 bytes
  37i,12n,32p,702b,706s stack positions out of 5000i,500n,10000p,200000b,100000s
